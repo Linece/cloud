@@ -1,0 +1,11 @@
+server:
+  port: 8761
+spring:
+  application:
+    name: ek
+eureka:
+  client:
+    #不注册自己的信息以供其他服务发现
+    register-with-eureka: false
+  instance:
+    appname: ek

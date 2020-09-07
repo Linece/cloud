@@ -1,0 +1,11 @@
+server:
+  port: 8020
+#spring:
+#  application:
+#    name: server1
+
+eureka:
+  client:
+    registry-fetch-interval-seconds: 30
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
