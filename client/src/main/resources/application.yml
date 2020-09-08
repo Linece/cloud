@@ -1,0 +1,19 @@
+server:
+  port: 8021
+
+spring:
+  application:
+    name: client
+  cloud:
+    #为了保持向后兼容性，使用作为默认的负载平衡器实现。但是，Spring Cloud Netflix Ribbon现在处于维护模式，所以我们建议使用Spring Cloud load均衡器。为此，设置spring.cloud.loadbalance .ribbon的值。使为false。
+    loadbalancer:
+      ribbon:
+        enabled: false
+feign:
+  hystrix:
+    enabled: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/

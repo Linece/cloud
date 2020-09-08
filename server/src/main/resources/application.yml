@@ -1,8 +1,8 @@
 server:
   port: 8020
-#spring:
-#  application:
-#    name: server1
+spring:
+  application:
+    name: server1
 
 eureka:
   client:

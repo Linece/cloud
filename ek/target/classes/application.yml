@@ -9,3 +9,8 @@ eureka:
     register-with-eureka: false
   instance:
     appname: ek
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 5
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 5000
