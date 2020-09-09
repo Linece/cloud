@@ -1,5 +1,5 @@
 server:
-  port: 8021
+  port: 8030
 
 spring:
   application:
@@ -17,3 +17,15 @@ eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+
+ribbon:
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true
+sample-client:
+  ribbon:
+    #服务地址
+    listOfServers: localhost:8020,localhost:8021
+    #ribbon规则：RoundRobinRule（轮询）；RandomRule（随机）
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
