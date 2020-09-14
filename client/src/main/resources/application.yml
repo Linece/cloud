@@ -23,9 +23,13 @@ ribbon:
     enabled: false
   okhttp:
     enabled: true
-sample-client:
+  eureka:
+    #禁用ribbon的rureka
+    enabled: false
+stores:
   ribbon:
     #服务地址
     listOfServers: localhost:8020,localhost:8021
     #ribbon规则：RoundRobinRule（轮询）；RandomRule（随机）
-    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
+    #NFLoadBalancerRuleClassName: com.org.ribbon.rule.Myrule
