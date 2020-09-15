@@ -1,0 +1,23 @@
+server:
+  port: 8040
+
+spring:
+  application:
+    name: gatway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true #开启gatway 服务注册和发现
+          low-case-service-id: true  #请求路径上的服务名配置为小写
+      enabled: true #是否开启网关，默认开启
+      routes:
+      - id: route1
+        uri: http://localhost:8030
+        predicates:
+        - Path=/**
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
