@@ -1,0 +1,14 @@
+server:
+  port: 8050
+
+spring:
+  application:
+    name: zull
+
+zuul:
+  routes:
+    eureka-application-service:
+      path: /api/**
+      url: http://localhost:8030/   #根据请求路径路由到服务地址
+      #serviceId: CLIENT
+
