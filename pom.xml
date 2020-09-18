@@ -23,5 +23,6 @@
         <module>ek</module>
         <module>client</module>
         <module>gatway</module>
+        <module>zull</module>
     </modules>
 </project>
