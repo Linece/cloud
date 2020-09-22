@@ -76,6 +76,20 @@ public class FeignController {
 
 	}
 
+	@GetMapping("/gg/stuff")
+	public void doStuff1() throws Exception{
+		CloseableHttpClient httpClient = HttpClients.createDefault();
+		for (int i=0;i<10;i++){
+			ServiceInstance instance = loadBalancerClient.choose("stores");
+			URI storesUri = URI.create(String.format("http://%s:%s", instance.getHost(), instance.getPort())+"/cloud");
+
+			HttpGet httpGet = new HttpGet(storesUri);
+			org.apache.http.HttpResponse response =  httpClient.execute(httpGet);
+			System.out.println(EntityUtils.toString(response.getEntity()));
+		}
+		System.out.println("gggggggggggggggggggggggggggggggggggggg");
+	}
+
 //	@GetMapping("/router")
 //	public String router(){
 //		return restTemplate.getForObject("http://provider/student/index",String.class);

@@ -8,8 +8,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GateWayController {
 
-	@GetMapping("/stuff")
-	public String stuff(){
-		return "stuff";
-	}
+//	@GetMapping("/stuff")
+//	public String stuff(){
+//		return "stuff";
+//	}
 }
